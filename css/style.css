@@ -1,7 +1,27 @@
+/* General Styles */
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Card Styles */
+.cards-container {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    padding: 32px;
+}
+
+.card {
+    height: 200px;
+    background-color: lightgrey;
 }
