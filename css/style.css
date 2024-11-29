@@ -10,6 +10,8 @@
 html,
 body {
     height: 100%;
+    color: rgb(240, 240, 240);
+    background-color: rgb(25, 25, 25);
 }
 
 /* Card Styles */
@@ -23,5 +25,38 @@ body {
 
 .card {
     height: 200px;
-    background-color: lightgrey;
+    position: relative;
+    display: flex;
+    background-color: rgb(50, 50, 50);
+    padding: 16px;
+}
+
+.card-body p {
+    margin: 8px;
+}
+
+.card-book {
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: rgb(60, 60, 60);
+}
+
+.card-remove:hover {
+    background-color: rgb(80, 80, 80);
+}
+
+.card-add {
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    cursor: pointer;
 }
