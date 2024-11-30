@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Odin Library</title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Odin Library</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Odin Library</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Odin Library</h1>
 
-    <div class="cards-container">
-      <div class="card card-add">
-        <p>+</p>
+  <div class="cards-container">
+    <div class="card card-add">
+      <p>+</p>
+    </div>
+  </div>
+
+  <template>
+    <div class="card card-book">
+      <p class="card-remove">x</p>
+      <h3 class="card-title"></h3>
+      <div class="card-body">
+        <p>by <span class="author-name"></span></p>
+        <p>No. of Pages: <span class="pages"></span></p>
+        <p>Book <span class="read"></span>.</p>
       </div>
     </div>
+  </template>
 
-    <template>
-      <div class="card card-book">
-        <p class="card-remove">x</p>
-        <h3 class="card-title"></h3>
-        <div class="card-body">
-          <p>by <span class="author-name"></span></p>
-          <p>No. of Pages: <span class="pages"></span></p>
-          <p>Book <span class="read"></span>.</p>
-        </div>
-      </div>
-    </template>
-  </body>
-  <script src="js/script.js"></script>
+  <dialog id="card-form" open>
+    <form method="dialog">
+      <p>Add Information about the book here:</p>
+      <label for="book-title">Title:</label>
+      <input type="text" name="title" id="book-title">
+    </form>
+  </dialog>
+</body>
+<script src="js/script.js"></script>
 </html>
