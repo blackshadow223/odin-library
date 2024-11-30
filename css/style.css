@@ -23,6 +23,7 @@ body {
     padding: 32px;
 }
 
+#card-form,
 .card {
     height: 200px;
     position: relative;
@@ -63,4 +64,13 @@ body {
     align-items: center;
     font-size: 64px;
     cursor: pointer;
+}
+
+#card-form {
+    color: rgb(240, 240, 240);
+    width: 60vw;
+    height: auto;
+    margin-top: 32px;
+    margin-left: 32px;
+    border: none;
 }
