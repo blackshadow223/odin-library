@@ -7,11 +7,10 @@
     box-sizing: border-box;
 }
 
-html,
 body {
-    height: 100%;
     color: rgb(240, 240, 240);
     background-color: rgb(25, 25, 25);
+    padding: 16px;
 }
 
 input[type="text"],
