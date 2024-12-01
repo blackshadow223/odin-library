@@ -17,7 +17,7 @@
 
   <template>
     <div class="card card-book">
-      <p class="card-remove">x</p>
+      <button id="book-remove" class="card-remove">x</button>
       <h3 class="card-title"></h3>
       <div class="card-body">
         <p>by <span class="author-name"></span></p>
@@ -27,7 +27,8 @@
     </div>
   </template>
 
-  <dialog id="card-form" open>
+  <dialog id="card-form">
+    <button id="cancel-dialog" class="card-remove">x</button>
     <form method="dialog">
       <h3>Add Information about the book here:</h3>
       <p><strong>Note: </strong> All of the inputs are required.</p>
