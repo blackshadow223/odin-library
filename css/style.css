@@ -64,9 +64,12 @@ input[type="number"]:focus {
     position: absolute;
     top: 0;
     right: 0;
+    border: none;
+    outline: none;
     padding: 4px 24px;
     cursor: pointer;
     font-size: 18px;
+    color: inherit;
     background-color: rgb(60, 60, 60);
 }
 
@@ -83,11 +86,15 @@ input[type="number"]:focus {
 
 #card-form {
     color: rgb(240, 240, 240);
-    width: 60vw;
-    height: auto;
-    margin-top: 32px;
-    margin-left: 32px;
+    width: 50vw;
+    height: min-content;
+    margin: auto;
     border: none;
+    overflow: hidden;
+}
+
+#card-form::backdrop {
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .form-container {
