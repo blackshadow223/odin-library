@@ -7,4 +7,4 @@ This project requires me to use the knowledge of Objects and Prototypes
 learned in the relevant lessons, and apply them here to make a simple
 Library class.
 
-I'll do my best.
+I have done my best.
