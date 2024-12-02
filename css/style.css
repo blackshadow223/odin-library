@@ -51,7 +51,7 @@ input[type="number"]:focus {
 }
 
 .card-add,
-.card-body {
+.card-book {
     display: flex;
 }
 
