@@ -71,5 +71,43 @@
 //     form.reset();
 // });
 
+class Book {
+    // Private Variables
+    static #counter = 0;
+    #id;
+    #title;
+    #author;
+    #pages;
+    #read;
 
+    // Constructor
+    constructor(Title, Author, Pages, Read) {
+        this.#id = Book.#counter++;
+        this.#title = Title;
+        this.#author = Author;
+        this.#pages = Pages;
+        this.#read = Read;
+    }
+
+    // API
+    get id() {
+        return this.#id;
+    }
+
+    get title() {
+        return this.#title;
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    get pages() {
+        return this.#pages;
+    }
+
+    get read() {
+        return this.#read;
+    }
+}
 
