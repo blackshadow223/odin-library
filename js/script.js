@@ -248,3 +248,6 @@ class Library {
     }
 
 }
+
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
+const myLibrary = new Library(theHobbit);
