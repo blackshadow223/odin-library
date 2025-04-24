@@ -90,7 +90,6 @@ input[type="number"]:focus {
     height: min-content;
     margin: auto;
     border: none;
-/*    overflow: hidden;*/
 }
 
 #card-form::backdrop {
