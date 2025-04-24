@@ -38,6 +38,47 @@ class Book {
     }
 }
 
+class FormValidatorContract {
+    // Necessary Public Methods
+    validate(form) {
+        form;
+    }
+}
+
+// Use Event Listener instead, perhaps 'oninput' or the likes
+class FormValidator extends FormValidatorContract {
+    // Public Methods
+    validate(form) {
+        let isValid = true;
+
+        if (form instanceof HTMLFormElement) {
+            const elements = Array.from(form.elements);
+
+            elements.forEach(element => {
+                if (!(element instanceof HTMLInputElement)) return;
+
+                const errorSpan = element.nextElementSibling; // Not next node, but an element
+                const ok = element.validity.valid;
+
+                if (errorSpan instanceof HTMLSpanElement) {
+                    if (ok) {
+                            errorSpan.textContent = ""; // Remove Error Message
+                            errorSpan.classList.remove("active");
+                            element.style.outline = ""; // Reset style
+                        } else {
+                            errorSpan.textContent = element.validationMessage;
+                            errorSpan.classList.add("active");
+                            element.style.outline = "1px solid #900";
+                            isValid = false;
+                        }
+                    }
+                });
+        }
+
+        return isValid;
+    }
+}
+
 class Library {
     // Private Variables
     #myLibrary = [];
@@ -46,10 +87,13 @@ class Library {
     #cancelDialog;
     #template;
     #form;
+    #formValidator;
 
 
     // Constructor
-    constructor(...books) {
+    constructor(formValidator, ...books) {
+        this.#formValidator = formValidator;
+
         books.forEach(book => {
             if (book instanceof Book) {
                 this.#myLibrary.push(book);
@@ -115,7 +159,17 @@ class Library {
         this.#dialog.close();
     }
 
-    #addBookToLibrary() {
+    #addBookToLibrary(event) {
+        if (this.#formValidator instanceof FormValidatorContract) {
+            const validation = this.#formValidator.validate(this.#form);
+
+            if (!validation) {
+                event.preventDefault();
+                event.stopPropagation();
+                return; // Stop execution
+            }
+        }
+
         const { title, author, pages, read } = this.#form.elements;
         const newBook = new Book(title.value, author.value, parseInt(pages.value), read.checked);
         this.addBook(newBook);
@@ -177,4 +231,4 @@ class Library {
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
-const myLibrary = new Library(theHobbit);
+const myLibrary = new Library(new FormValidator(), theHobbit);
