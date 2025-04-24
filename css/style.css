@@ -90,7 +90,7 @@ input[type="number"]:focus {
     height: min-content;
     margin: auto;
     border: none;
-    overflow: hidden;
+/*    overflow: hidden;*/
 }
 
 #card-form::backdrop {
@@ -128,4 +128,18 @@ input[type="number"]:focus {
 
 .form-button:hover {
     background-color: rgb(80, 80, 80);
+}
+
+.error {
+    width: 100%;
+    padding: .3rem;
+
+    font-size: 80%;
+    color: white;
+    background-color: transparent;
+    border-radius: 0 0 5px 5px;
+}
+
+.error.active {
+    background-color: #900;
 }
